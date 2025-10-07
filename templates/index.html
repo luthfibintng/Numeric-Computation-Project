@@ -1,1 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Iterasi Numerik</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Kalkulator Metode Iterasi Numerik 🔢</h1>
+            <p>Masukkan fungsi $f(x)$, fungsi iterasi $g(x)$, dan parameter lainnya untuk menemukan akar persamaan.</p>
+        </header>
 
+        <div class="main-content">
+            <div class="calculator-card" id="calculator-card">
+                <form id="calculator-form">
+                    <div class="input-group">
+                        <label for="fx">Fungsi $f(x)$</label>
+                        <input type="text" id="fx" name="fx" placeholder="Contoh: x**3 + x - 1" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="gx">Fungsi Iterasi $g(x)$</label>
+                        <input type="text" id="gx" name="gx" placeholder="Contoh: (1 - x)**(1/3)" required>
+                    </div>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="x0">Tebakan Awal ($x_0$)</label>
+                            <input type="number" step="any" id="x0" name="x0" value="0.5" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="toleransi">Toleransi Error</label>
+                            <input type="number" step="any" id="toleransi" name="toleransi" value="0.0001" required>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="max_iter">Maksimum Iterasi</label>
+                        <input type="number" id="max_iter" name="max_iter" value="50" required>
+                    </div>
+
+                    <button type="submit" id="hitung-btn">Hitung Akar</button>
+                </form>
+            </div>
+
+            <div id="hasil-container" class="hidden">
+                <h2>Hasil Perhitungan 📈</h2>
+                <div id="ringkasan-hasil"></div>
+                <div class="tabel-wrapper">
+                    <table id="hasil-tabel">
+                        <thead>
+                            <tr>
+                                <th>Iterasi</th>
+                                <th>$x_i$</th>
+                                <th>$g(x_i)$</th>
+                                <th>$f(x_i)$</th>
+                                <th>Error</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div id="error-container" class="hidden"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
