@@ -4,6 +4,6 @@ kelompok 4
 - Muhammad Faruq Rais
 - Lutfi Bintang Adrianto
 - Fachraja Ramadhan Sukma
-- Khalisa Humaira
+- Khalisa Humairaa
 - Zanna Zikraana
 - Cut Farah Salsabila 
