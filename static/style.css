@@ -1,1 +1,205 @@
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #50e3c2;
+    --background-color: #f4f7f6;
+    --card-background: #ffffff;
+    --text-color: #333;
+    --header-color: #2c3e50;
+    --border-color: #ddd;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
 
+/* ANIMASI BARU UNTUK EFEK MUNCUL */
+@keyframes grow-in {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    overflow-x: hidden; /* Mencegah scroll horizontal */
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+header h1 {
+    color: var(--header-color);
+    font-weight: 600;
+}
+
+/* PENGATURAN LAYOUT UTAMA */
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 0fr;
+    gap: 0px;
+    align-items: flex-start;
+    transition: all 0.8s ease-in-out;
+}
+
+/* Saat hasil muncul, kolom kedua melebar */
+.main-content.show-results {
+    grid-template-columns: 1fr 1.5fr; /* Kolom hasil lebih lebar */
+    gap: 30px;
+}
+/* AKHIR PERBAIKAN LAYOUT */
+
+.calculator-card {
+    background: var(--card-background);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px var(--shadow-color);
+    text-align: left;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 450px; /* Batasi lebar maksimum */
+    margin-left: auto; /* Mendorong ke kanan di dalam grid */
+    margin-right: auto; /* Mendorong ke kiri di dalam grid */
+    transition: all 0.8s ease-in-out;
+}
+
+/* Saat hasil muncul, kalkulator mengecil dan rata kiri */
+.main-content.show-results .calculator-card {
+    max-width: 400px;
+    margin-left: 0;
+}
+
+#hasil-container {
+    background: var(--card-background);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px var(--shadow-color);
+    width: 100%;
+    opacity: 0; /* Awalnya tidak terlihat */
+}
+
+/* Saat hasil muncul, jalankan animasi */
+#hasil-container.visible {
+    animation: grow-in 0.6s forwards ease-out;
+}
+
+/* ... (Sisa kode CSS lainnya sama seperti sebelumnya) ... */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 400;
+    color: #555;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+.input-row {
+    display: flex;
+    gap: 20px;
+}
+
+.input-row .input-group {
+    flex: 1;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(74, 144, 226, 0.3);
+}
+
+#ringkasan-hasil {
+    font-size: 1.2em;
+    padding: 15px;
+    background-color: #eaf2fd;
+    border-left: 5px solid var(--primary-color);
+    margin-bottom: 20px;
+    text-align: left;
+    border-radius: 5px;
+}
+
+.tabel-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+}
+
+thead {
+    background-color: #f9f9f9;
+}
+
+th {
+    font-weight: 600;
+    color: var(--header-color);
+}
+
+.hidden {
+    display: none;
+}
+
+#error-container {
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    text-align: left;
+    white-space: pre-wrap;
+    font-family: monospace;
+}
