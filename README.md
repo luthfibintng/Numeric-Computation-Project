@@ -1,9 +1,9 @@
 Komputasi Numeric
-kelompok 4
+kelompok 4 ()
 
 - Muhammad Faruq Rais
 - Lutfi Bintang Adrianto
 - Fachraja Ramadhan Sukma
-- Khalisa Humairaa
+- Khalisa Humaira
 - Zanna Zikraana
 - Cut Farah Salsabila 
