@@ -1,5 +1,5 @@
 Komputasi Numeric
-kelompok 4 (Metode Iterasi)
+kelompok 4 ( Metode Iterasi )
 
 - Muhammad Faruq Rais
 - Lutfi Bintang Adrianto
