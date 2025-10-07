@@ -5,5 +5,5 @@ kelompok 4
 - Lutfi Bintang Adrianto
 - Fachraja Ramadhan Sukma
 - Khalisa Humaira
-- Zanna Zikrana
+- Zanna Zikraana
 - Cut Farah Salsabila 
